@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Varijable</title>
+</head>
+<body>
+<script type="text/javascript">
+//Zadatak1 
+    document.write("Zadatak 1<br>")
+    let Broj;
+    Broj = 19;
+    let Niz1 = 'Niz znakova';
+    let Niz2 = '3.14';
+    let Niz3 = 'U dva<br> redka';
+    let Logicka = true;
+
+    document.write("a)  " + Broj + "<br>");
+    document.write("b) " + Niz1 + "<br>");
+    document.write("c) " + Niz2 + "<br>");
+    document.write("d) " + Niz3 + "<br>");
+    document.write("e) " + Broj + "<br>");
+    document.write("g) " + Logicka + "<br>");
+
+    Logicka = false;
+
+    document.write("h) " + Logicka + "<br>");
+
+
+    //Zadatak 2
+    document.write("<br>Zadatak 2 - Kcadrati:<br>")
+    let kvadrat;
+    for(let i = 1; i<=100; i++)
+    {
+        kvadrat = i * i;
+        if(i % 2 == 0)
+            document.write(kvadrat + " ");
+    }
+
+    //Zadatak3
+    document.write("<br><br>Zadatak 3 - Prosti<br>")
+    for(let i = 1; i<=1000; i++)
+    {
+        let prost = true;
+        for(let j = 2; j<i; j++)
+        {
+            if(i % j == 0)
+            {
+                prost = false
+            }
+
+        }
+        if(prost == true)
+            document.write(i + " ");
+    }
+
+    //Zadatak4
+    document.write("<br><br>Zadatak 4: <br>")
+    polje = new Array(1,2,3,4,7,8,5,6,9, 55, 12, 4,85);
+    duljina = polje.length;
+    document.write("a) Duljina niza: " + duljina);
+
+    let polje_1 = polje.sort((a, b) => a - b);
+    document.write("<br>b) Sort vece ka manjem: " + polje_1);
+
+    let polje_2 = polje.sort((a, b) => b - a);
+    document.write("<br>c) Sort manje ka većem: " + polje_2);
+
+    polje_2.pop();
+    document.write("<br>d) Briši zadnje: " + polje_2);
+
+    polje_2.push(19, 22);
+    document.write("<br>e) Dodaj na zadnje: " + polje_2);
+
+    let polje2 = new Array("Banana", "Orange", "Apple", "Mango");
+
+    let final_polje = polje.concat(polje2);
+    document.write("<br>f) Finalno polje spojeno: " + final_polje + "<br>");
+    
+
+    //Zadatak5
+    let osoba1 = {
+        firstName:"Marko", 
+        lastName:"Maric", 
+        age:40, 
+        eyeColor:"black"
+    };
+
+    let osoba2 = {
+        firstName:"Pere", 
+        lastName:"Pavic", 
+        age:67, 
+        eyeColor:"blue"
+    };
+
+    let osoba3 = {
+        firstName:"Ante", 
+        lastName:"Gotovina", 
+        age:40, 
+        eyeColor:"green"
+    };
+
+    let osobe = [osoba1, osoba2, osoba3];
+
+    for(let i = 0; i < osobe.length; i++)
+    {
+        for(let indeks in osobe[i])
+        {
+            document.write("#" + (i + 1) + " " + indeks + ": " + osobe[i][indeks] + "<br>");
+        }
+    }
+
+    //Zadatak6
+
+    let pas = {
+        ime: "Reks",
+        godine: 2,
+
+        laje()
+        {
+            return "AV, AV";
+        }
+    };
+
+
+    document.write("<br>" + pas.ime);
+    document.write("<br>" + pas.godine);
+    document.write("<br>" + pas.laje());
+
+
+    //Zadatak7
+    document.write("<br><br>Zadatak 7");
+    let kvadrat_f = function(broj)
+    {
+        if(typeof broj === "number")
+        {
+            return (broj * broj);
+        }
+        else
+        {
+            return "Greška!";
+        }
+    };
+
+    document.write("<br>" + kvadrat_f(5));
+    document.write("<br>" + kvadrat_f("abc") + "<br>");
+
+    //Zadatak8
+
+    document.write("<br>Zadatak 8: ");
+    
+    var arr = ['Ovo', 'je', 'My', 'prvi', 'komad', 'OF', 'JAVASCRIPT', 'koda', 'Koji', 'je', 'proradio'];
+
+    var pomocni = [];
+
+    for(let i = 0; i < arr.length; i++)
+    {
+        let rijec = arr[i];
+
+        if(rijec.length > 5 || rijec !== rijec.toLowerCase())
+        {
+            pomocni.push(rijec);
+        }
+    }
+
+    document.write("<br>" + pomocni);
+
+
+    //Zadatak9
+
+    document.write("<br><br>Zadatak 9: <br>");
+    function savrseniBrojevi(n)
+    {
+        for(let broj = 1; broj <= n; broj++)
+        {
+            let suma = 0;
+
+            for(let djelitelj = 1; djelitelj < broj; djelitelj++)
+            {
+                if(broj % djelitelj === 0)
+                {
+                    suma += djelitelj;
+                }
+            }
+
+            if(suma === broj)
+            {
+                document.write(broj + "<br>");
+            }
+        }
+    }
+
+    savrseniBrojevi(100);
+
+
+    //Zadatak10
+    document.write("<br> Zadatak 10: ");
+    function randomBrojevi(min, max)
+    {
+    for(let i = 1; i <= 5; i++)
+        {
+        let broj = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        document.write(broj + "<br>");
+        }
+    }       
+
+    randomBrojevi(1, 5);
+
+
+    //Zadaca11
+    document.write("<br> Zadatak 11: <br>");
+    const tempDay = ['2023-11-29', -1, 0, -0.5,0.5, 0, 1.2,1.8,2, 3, 4, 6, 9, 12, 7, 6, 6,8,5,4,2,3,2,1,0];
+
+    
+    let min = tempDay[1];
+    let max = tempDay[1];
+    let sum = 0;
+    let avg = 0;
+
+    for(let i = 1; i < tempDay.length; i++)
+    {
+        if(min > tempDay[i])
+        {
+            min = tempDay[i];
+        }
+
+        if(max < tempDay[i])
+        {
+            max = tempDay[i];
+        }
+
+        sum += tempDay[i];
+    }
+
+    avg = (sum / (tempDay.length - 1)) ;
+
+    document.write("Datum: " + tempDay[0]);
+    document.write("<br>Max: " + max);
+    document.write("<br>Min: " + min);   
+    document.write("<br>Prosjek: " + avg); 
+
+
+</script>
+</body>
+</html>
